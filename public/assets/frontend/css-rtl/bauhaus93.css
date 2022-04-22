@@ -1,0 +1,38 @@
+@charset "UTF-8";
+body { direction: rtl ; }
+@font-face {
+    font-family: 'Bauhaus 93';
+    src: url('../fonts/bauhaus93/Bauhaus93.eot');
+    src: url('../fonts/bauhaus93/Bauhaus93d41d.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/bauhaus93/Bauhaus93.woff2') format('woff2'),
+        url('../fonts/bauhaus93/Bauhaus93.woff') format('woff'),
+        url('../fonts/bauhaus93/Bauhaus93.ttf') format('truetype'),
+        url('../fonts/bauhaus93/Bauhaus93.svg#Bauhaus93') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+svg[class*=right], svg[class*=left], [class*=right].fas, [class*=left].fas {
+    transform: scaleX(-1) !important;
+}
+
+.product-item__badge {
+    transform: rotate(-45deg) translateZ(0) !important;
+}
+
+#st_gdpr_iframe {
+    left: 0 !important;
+    right: -5000px;
+}
+
+.product-form__item select.single-option-selector {
+    background-position: calc(23px) calc(1rem + 10px), calc(27px) calc(1rem + 10px);
+}
+
+.card__badge {
+    -ms-transform: rotate(-45deg) translateZ(0);
+    -webkit-transform: rotate(-45deg) translateZ(0);
+    transform: rotate(-45deg) translateZ(0);
+}

@@ -26,8 +26,13 @@
 
     <link rel="stylesheet"  href="{{asset('assets/backend/vendor/bootstrap-fileinput/css/fileinput.min.css')}}"/>
     <link rel="stylesheet"  href="{{asset('assets/backend/vendor/summernote/summernote-bs4.min.css')}}"/>
+
+
     @yield('style')
     @toastr_css
+
+    @livewireStyles
+
 
 </head>
 
@@ -131,7 +136,9 @@
 
 
 @yield('script')
+@livewireScripts
 
+@stack('scripts')
 
 @toastr_js
 @toastr_render

@@ -48,6 +48,8 @@ return [
     'Login' => 'دخول',
     'Start' => 'هيا لنبدأ',
 
+    'All_Rights_Reserved' => 'جميع الحقوق محفوظة',
+
 
 
     'Edit' => 'تعديل',

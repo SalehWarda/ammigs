@@ -49,6 +49,19 @@ return [
     'Email' => 'Email',
     'App_Store_Link' => 'App Store Link',
     'Google_Play_Link' => 'Google Play Link',
+    'Settings' => 'Settings',
+    'Logout' => 'Logout',
+    'Profile' => 'Profile',
+    'Name' => 'Name',
+    'Password' => 'Password',
+    'Dashboard' => 'Dashboard',
+    'CompanyProducts' => 'The number of the company products',
+    'CoverPhoto' => 'Cover Photo',
+    'Event' => 'Event',
+    'Created_Successfully' => 'Created Successfully',
+    'Updated_Successfully' => 'Updated Successfully',
+    'Deleted_Successfully' => 'Deleted Successfully',
+
 
 
 

@@ -22071,7 +22071,7 @@ footer a {
   height: calc(3.1rem + 2px); }
 
 select.form-control:not([size]):not([multiple]) {
-  height: calc(2.8rem + 2px); }
+  height: calc(3.8rem + 2px); }
 
 /* Sparkline chart */
 .jqstooltip {

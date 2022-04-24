@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\GamesController;
 use App\Http\Controllers\Backend\HomeController;
 use App\Http\Controllers\Backend\ProductController;
+use App\Http\Controllers\Backend\SettingController;
 use App\Http\Controllers\Backend\SliderController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -30,8 +31,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
     Route::get('/login',[LoginController::class, 'getLogin'])->name('getLogin');
     Route::post('/login',[LoginController::class, 'login'])->name('login');
 
-    Route::group(['prefix'=>'admin'],function (){
+    Route::group(['prefix'=>'admin','middleware'=>'auth:admin'],function (){
 
+        Route::get('live-status/{id}', [LoginController::class, 'liveStatus']);
 
         Route::get('/dashboard',[DashboardController::class, 'index'])->name('admin.dashboard');
         Route::get('/logout',[LoginController::class,'logout'])->name('logout');
@@ -99,6 +101,23 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
 
         });
 
+
+
+
+        Route::group(['prefix'=>'settings'],function (){
+
+            Route::get('/',[SettingController::class,'index'])->name('admin.settings');
+            Route::post('/update',[SettingController::class,'update'])->name('admin.settings.update');
+
+
+            Route::post('/admin/removeImage', [SettingController::class, 'removeImage'])->name('admin.removeImage');
+
+
+            Route::get('/account',[SettingController::class,'account'])->name('admin.account');
+
+            Route::patch('/update-account',[SettingController::class,'updateAccount'])->name('admin.account_settings.update');
+
+        });
 
 
 

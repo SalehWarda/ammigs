@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CoverRequest;
 use App\Models\Cover;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -28,7 +29,7 @@ class CoverController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(CoverRequest $request)
     {
         //
         $input['title'] = ['ar'=>$request->title_ar,'en' => $request->title_en];
@@ -46,9 +47,11 @@ class CoverController extends Controller
             $input['image'] = $file_name;
 
         }
+
+
         Cover::create($input);
 
-        toastr()->success('تم الإضافة بنجاح!');
+        toastr()->success(trans('dashboard.Created_Successfully'));
 
         return redirect()->route('admin.covers');
     }
@@ -68,7 +71,7 @@ class CoverController extends Controller
     }
 
 
-    public function update(Request $request)
+    public function update(CoverRequest $request)
     {
         //
         $cover = Cover::findOrFail($request->id);
@@ -95,7 +98,7 @@ class CoverController extends Controller
         }
         $cover->update($input);
 
-        toastr()->success('تم التعديل بنجاح!');
+        toastr()->success(trans('dashboard.Updated_Successfully'));
 
         return back();
     }
@@ -111,7 +114,7 @@ class CoverController extends Controller
 
         }
         $cover->delete();
-        toastr()->error('تم الحذف بنجاح!');
+        toastr()->error(trans('dashboard.Deleted_Successfully'));
         return back();
 
     }

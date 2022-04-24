@@ -21,6 +21,7 @@
                     <div class="pull-left"><i class="ti-palette"></i><span
                             class="right-nav-text">{{trans('dashboard.Cover')}}</span></div>
                     <div class="pull-right"><i class="ti-plus"></i></div>
+
                     <div class="clearfix"></div>
                 </a>
                 <ul id="elements" class="collapse" data-parent="#sidebarnav">
@@ -52,7 +53,9 @@
                 </ul>
             </li>
 
-            <li>
+
+
+             <li>
                 <a href="javascript:void(0);" data-toggle="collapse" data-target="#contact-menu">
                     <div class="pull-left"><i class="ti-email"></i><span
                             class="right-nav-text">{{trans('dashboard.Contacts')}}</span></div>
@@ -63,6 +66,20 @@
                     <li><a href="{{route('admin.contacts')}}">{{trans('dashboard.Contacts')}}</a></li>
                 </ul>
             </li>
+
+
+            <li>
+                <a href="javascript:void(0);" data-toggle="collapse" data-target="#settings-menu">
+                    <div class="pull-left"><i class="ti-settings"></i><span
+                            class="right-nav-text">{{trans('dashboard.Settings')}}</span></div>
+                    <div class="pull-right"><i class="ti-plus"></i></div>
+                    <div class="clearfix"></div>
+                </a>
+                <ul id="settings-menu" class="collapse" data-parent="#sidebarnav">
+                    <li><a href="{{route('admin.settings')}}">{{trans('dashboard.Settings')}}</a></li>
+                </ul>
+            </li>
+
 
         </ul>
     </div>

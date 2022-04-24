@@ -1,92 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    <meta charset="UTF-8">
-    <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="Description" content="Bootstrap Responsive Admin Web Dashboard HTML5 Template">
-    <meta name="Author" content="Spruko Technologies Private Limited">
-    <meta name="Keywords" content="admin,admin dashboard,admin dashboard template,admin panel template,admin template,admin theme,bootstrap 4 admin template,bootstrap 4 dashboard,bootstrap admin,bootstrap admin dashboard,bootstrap admin panel,bootstrap admin template,bootstrap admin theme,bootstrap dashboard,bootstrap form template,bootstrap panel,bootstrap ui kit,dashboard bootstrap 4,dashboard design,dashboard html,dashboard template,dashboard ui kit,envato templates,flat ui,html,html and css templates,html dashboard template,html5,jquery html,premium,premium quality,sidebar bootstrap 4,template admin bootstrap 4"/>
-
-    <!-- Title -->
+    <meta name="keywords" content="HTML5 Template" />
+    <meta name="description" content="Webmin - Bootstrap 4 & Angular 5 Admin Dashboard Template" />
+    <meta name="author" content="potenzaglobalsolutions.com" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <title>Login</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="{{asset('assets/backend/img/brand/favicon.png')}}" type="image/x-icon"/>
+    <link rel="shortcut icon" href="{{ asset('assets/backend/images/favicon.ico') }}" />
 
-    <!-- Icons css -->
-    <link href="{{asset('assets/backend/css/icons.css')}}" rel="stylesheet">
+    <!-- Font -->
+    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900">
 
-    <!--  Right-sidemenu css -->
-    <link href="{{asset('assets/backend/plugins/sidebar/sidebar.css')}}" rel="stylesheet">
-
-    <!--  Custom Scroll bar-->
-    <link href="{{asset('assets/backend/plugins/mscrollbar/jquery.mCustomScrollbar.css')}}" rel="stylesheet"/>
-
-    <!--  Left-Sidebar css -->
-    <link rel="stylesheet" href="{{asset('assets/backend/css/closed-sidemenu.css')}}">
-
-    <!--- Style css --->
-    <link href="{{asset('assets/backend/css/style.css')}}" rel="stylesheet">
-
-    <!--- Dark-mode css --->
-    <link href="{{asset('assets/backend/css/style-dark.css')}}" rel="stylesheet">
-
-    <!---Skinmodes css-->
-    <link href="{{asset('assets/backend/css/skin-modes.css')}}" rel="stylesheet" />
-
-    <!--- Animations css-->
-    <link href="{{asset('assets/backend/css/animate.css')}}" rel="stylesheet">
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/backend/css/rtl.css') }}" />
 
 </head>
-<body class="main-body bg-light">
 
-<!-- Loader -->
-<div id="global-loader">
-    <img src="{{asset('assets/backend/img/loader.svg')}}" class="loader-img" alt="Loader">
-</div>
-<!-- /Loader -->
+<body>
 
-<!-- Page -->
-<div class="page">
+<div class="wrapper">
 
-    <div class="container-fluid">
-        <div class="row no-gutter">
-            <!-- The image half -->
+    <!--=================================
+     preloader -->
 
-            <!-- The content half -->
-
-            @yield('loginContent')
-
-            <!-- End -->
-        </div>
+    <div id="pre-loader">
+        <img src="{{ asset('assets/backend/images/pre-loader/loader-01.svg') }}" alt="">
     </div>
 
+    <!--=================================
+     preloader -->
+
+    <!--=================================
+    login-->
+
+    <section class="height-100vh d-flex align-items-center page-section-ptb login" style="background-image: url(images/login-bg.jpg);" >
+        <div class="container">
+
+            @yield('content')
+
+        </div>
+    </section>
+
+    <!--=================================
+     login-->
+
 </div>
-<!-- End Page -->
 
-<!-- JQuery min js -->
-<script src="{{asset('assets/backend/plugins/jquery/jquery.min.js')}}"></script>
 
-<!-- Bootstrap Bundle js -->
-<script src="{{asset('assets/backend/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
-<!-- Ionicons js -->
-<script src="{{asset('assets/backend/plugins/ionicons/ionicons.js')}}"></script>
+<!--=================================
+ jquery -->
 
-<!-- Moment js -->
-<script src="{{asset('assets/backend/plugins/moment/moment.js')}}"></script>
+<!-- jquery -->
+<script src="{{ asset('assets/backend/js/jquery-3.3.1.min.js') }}"></script>
 
-<!-- eva-icons js -->
-<script src="{{asset('assets/backend/js/eva-icons.min.js')}}"></script>
+<!-- plugins-jquery -->
+<script src="{{ asset('assets/backend/js/plugins-jquery.js') }}"></script>
 
-<!-- Rating js-->
-<script src="{{asset('assets/backend/plugins/rating/jquery.rating-stars.js')}}"></script>
-<script src="{{asset('assets/backend/plugins/rating/jquery.barrating.js')}}"></script>
+<!-- plugin_path -->
+<script type="text/javascript">var plugin_path = '{{asset('assets/backend/js')}}/';</script>
 
-<!-- custom js -->
-<script src="{{asset('assets/backend/js/custom.js')}}"></script>
+<!-- chart -->
+<script src="{{ asset('assets/backend/js/chart-init.js') }}"></script>
+
+<!-- calendar -->
+<script src="{{ asset('assets/backend/js/calendar.init.js') }}"></script>
+
+<!-- charts sparkline -->
+<script src="{{ asset('assets/backend/js/sparkline.init.js') }}"></script>
+
+<!-- charts morris -->
+<script src="{{ asset('assets/backend/js/morris.init.js') }}"></script>
+
+<!-- datepicker -->
+<script src="{{ asset('assets/backend/js/datepicker.js') }}"></script>
+
+<!-- sweetalert2 -->
+<script src="{{ asset('assets/backend/js/sweetalert2.js') }}"></script>
+
+<!-- toastr -->
+<script src="{{ asset('assets/backend/js/toastr.js') }}"></script>
+
+<!-- validation -->
+<script src="{{ asset('assets/backend/js/validation.js') }}"></script>
+
+<!-- lobilist -->
+<script src="{{ asset('assets/backend/js/lobilist.js') }}"></script>
+
+<!-- custom -->
+<script src="{{ asset('assets/backend/js/custom.js') }}"></script>
 
 </body>
 </html>

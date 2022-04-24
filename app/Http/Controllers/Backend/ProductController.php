@@ -51,7 +51,7 @@ class ProductController extends Controller
         }
         Product::create($input);
 
-        toastr()->success('تم الإضافة بنجاح!');
+        toastr()->success(trans('dashboard.Created_Successfully'));
 
         return redirect()->route('admin.products');
     }
@@ -100,7 +100,7 @@ class ProductController extends Controller
         }
         $product->update($input);
 
-        toastr()->success('تم التعديل بنجاح!');
+        toastr()->success(trans('dashboard.Updated_Successfully'));
 
         return back();
     }
@@ -116,7 +116,7 @@ class ProductController extends Controller
 
         }
         $product->delete();
-        toastr()->error('تم الحذف بنجاح!');
+        toastr()->error(trans('dashboard.Deleted_Successfully'));
         return back();
 
     }

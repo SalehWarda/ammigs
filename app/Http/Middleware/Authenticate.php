@@ -21,7 +21,7 @@ class Authenticate extends Middleware
 
                 return route('getLogin');
             }else{
-                return route('getLogin');
+                return route('index');
 
 
             }

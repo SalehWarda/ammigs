@@ -47,6 +47,20 @@ return [
     'Email' => 'البريد الإلكتروني',
     'App_Store_Link' => 'رابط الآب ستور',
     'Google_Play_Link' => 'رابط جوجل بلاي',
+    'Settings' => 'الإعدادات',
+    'Logout' => 'خروج',
+    'Profile' => 'الملف الشخصي',
+    'Name' => 'الاسم بالكامل',
+    'Password' => 'كلمة المرور',
+    'Dashboard' => 'لوحة التحكم',
+    'CompanyProducts' => 'عدد منتجات الشركة',
+    'CoverPhoto' => 'صور الغلاف',
+    'Event' => 'الأحداث',
+    'Created_Successfully' => 'تم الإضافة بنجاح',
+    'Updated_Successfully' => 'تم التعديل بنجاح',
+    'Deleted_Successfully' => 'تم الحذف بنجاح',
+
+
 
 
 

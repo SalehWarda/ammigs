@@ -4,8 +4,11 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Backend\LoginRequest;
+use App\Models\Admin;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Cache;
 
 class LoginController extends Controller
 {
@@ -65,4 +68,7 @@ private function getGaurd()
 {
     return auth('admin');
 }
+
+
+
 }

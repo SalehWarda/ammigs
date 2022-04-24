@@ -53,6 +53,7 @@ return [
 
 
 
+    'All_Rights_Reserved' => 'All Rights Reserved',
 
 
 

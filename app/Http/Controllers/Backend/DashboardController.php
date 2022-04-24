@@ -53,7 +53,7 @@ class DashboardController extends Controller
         }
         $about->update($input);
 
-        toastr()->success('تم التعديل بنجاح!');
+        toastr()->success(trans('dashboard.Updated_Successfully'));
 
         return back();
     }
@@ -95,7 +95,7 @@ class DashboardController extends Controller
 
         $contacts->update($input);
 
-        toastr()->success('تم التعديل بنجاح!');
+        toastr()->success(trans('dashboard.Updated_Successfully'));
 
         return back();
     }

@@ -41,7 +41,7 @@ return [
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
         ],
-        'upload_slider' => [
+        'upload_attachments' => [
             'driver' => 'local',
             'root' => public_path('/'),
             'url' => env('APP_URL').'/public',

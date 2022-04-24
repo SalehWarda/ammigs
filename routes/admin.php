@@ -2,9 +2,11 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Backend\CategoriesController;
+use App\Http\Controllers\Backend\CoverController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\GamesController;
 use App\Http\Controllers\Backend\HomeController;
+use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\SliderController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -28,7 +30,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
     Route::get('/login',[LoginController::class, 'getLogin'])->name('getLogin');
     Route::post('/login',[LoginController::class, 'login'])->name('login');
 
-    Route::group(['prefix'=>'admin','middleware'=>'auth:admin'],function (){
+    Route::group(['prefix'=>'admin'],function (){
 
 
         Route::get('/dashboard',[DashboardController::class, 'index'])->name('admin.dashboard');
@@ -36,45 +38,49 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
 
 
 
-        Route::group(['prefix' => 'sliders'],function (){
+        Route::group(['prefix' => 'cover'],function (){
 
-            Route::post('/media/delete', [SliderController::class, 'removeImage'])->name('admin.sliders.removeImage');
+            Route::post('/media/delete', [CoverController::class, 'removeImage'])->name('admin.covers.removeImage');
 
-            Route::get('/',[SliderController::class, 'index'])->name('admin.sliders');
-            Route::get('/create',[SliderController::class, 'create'])->name('admin.sliders.create');
-            Route::post('/store',[SliderController::class, 'store'])->name('admin.slider.store');
-            Route::get('/edit/{id}',[SliderController::class, 'edit'])->name('admin.sliders.edit');
-            Route::patch('/update',[SliderController::class, 'update'])->name('admin.sliders.update');
-            Route::delete('/delete',[SliderController::class, 'destroy'])->name('admin.sliders.delete');
-
-        });
-
-
-         Route::group(['prefix' => 'categories'],function (){
-
-
-            Route::get('/',[CategoriesController::class, 'index'])->name('admin.categories');
-            Route::get('/create',[CategoriesController::class, 'create'])->name('admin.categories.create');
-            Route::post('/store',[CategoriesController::class, 'store'])->name('admin.categories.store');
-            Route::get('/edit/{id}',[CategoriesController::class, 'edit'])->name('admin.categories.edit');
-            Route::patch('/update',[CategoriesController::class, 'update'])->name('admin.categories.update');
-            Route::delete('/delete',[CategoriesController::class, 'destroy'])->name('admin.categories.delete');
+            Route::get('/',[CoverController::class, 'index'])->name('admin.covers');
+            Route::get('/create',[CoverController::class, 'create'])->name('admin.covers.create');
+            Route::post('/store',[CoverController::class, 'store'])->name('admin.covers.store');
+            Route::get('/edit/{id}',[CoverController::class, 'edit'])->name('admin.covers.edit');
+            Route::patch('/update',[CoverController::class, 'update'])->name('admin.covers.update');
+            Route::delete('/delete',[CoverController::class, 'destroy'])->name('admin.covers.delete');
 
         });
 
 
-         Route::group(['prefix' => 'games'],function (){
 
-             Route::post('/media/delete', [GamesController::class, 'removeImage'])->name('admin.games.removeImage');
+        Route::group(['prefix' => 'products'],function (){
 
-            Route::get('/',[GamesController::class, 'index'])->name('admin.games');
-            Route::get('/create',[GamesController::class, 'create'])->name('admin.games.create');
-            Route::post('/store',[GamesController::class, 'store'])->name('admin.games.store');
-            Route::get('/edit/{id}',[GamesController::class, 'edit'])->name('admin.games.edit');
-            Route::patch('/update',[GamesController::class, 'update'])->name('admin.games.update');
-            Route::delete('/delete',[GamesController::class, 'destroy'])->name('admin.games.delete');
+            Route::post('/media/delete', [CoverController::class, 'removeImage'])->name('admin.products.removeImage');
+
+            Route::get('/',[ProductController::class, 'index'])->name('admin.products');
+            Route::get('/create',[ProductController::class, 'create'])->name('admin.products.create');
+            Route::post('/store',[ProductController::class, 'store'])->name('admin.products.store');
+            Route::get('/edit/{id}',[ProductController::class, 'edit'])->name('admin.products.edit');
+            Route::patch('/update',[ProductController::class, 'update'])->name('admin.products.update');
+            Route::delete('/delete',[ProductController::class, 'destroy'])->name('admin.products.delete');
 
         });
+
+
+
+
+//         Route::group(['prefix' => 'games'],function (){
+//
+//             Route::post('/media/delete', [GamesController::class, 'removeImage'])->name('admin.games.removeImage');
+//
+//            Route::get('/',[GamesController::class, 'index'])->name('admin.games');
+//            Route::get('/create',[GamesController::class, 'create'])->name('admin.games.create');
+//            Route::post('/store',[GamesController::class, 'store'])->name('admin.games.store');
+//            Route::get('/edit/{id}',[GamesController::class, 'edit'])->name('admin.games.edit');
+//            Route::patch('/update',[GamesController::class, 'update'])->name('admin.games.update');
+//            Route::delete('/delete',[GamesController::class, 'destroy'])->name('admin.games.delete');
+//
+//        });
 
        Route::group(['prefix' => 'about'],function (){
 
@@ -82,6 +88,14 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
 
             Route::get('/',[DashboardController::class, 'about'])->name('admin.about');
             Route::patch('/update',[DashboardController::class, 'updateAbout'])->name('admin.about.update');
+
+        });
+
+       Route::group(['prefix' => 'contacts'],function (){
+
+
+            Route::get('/',[DashboardController::class, 'contacts'])->name('admin.contacts');
+            Route::patch('/update',[DashboardController::class, 'updateContacts'])->name('admin.contacts.update');
 
         });
 

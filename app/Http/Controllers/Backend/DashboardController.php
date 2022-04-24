@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\about;
+use App\Models\Contact;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
@@ -71,5 +72,31 @@ class DashboardController extends Controller
 
         }
         return true;
+    }
+
+
+
+    public function contacts()
+    {
+        $contacts = Contact::first();
+        return view('pages.backend.contacts',compact('contacts'));
+    }
+
+    public function updateContacts(Request $request)
+    {
+        $contacts = Contact::findOrFail($request->id);
+        $input['contact_description']  = ['ar'=>$request->contact_ar, 'en'=>$request->contact_en];
+        $input['address']  = $request->address;
+        $input['phone']  =$request->phone;
+        $input['email']  =$request->email;
+
+
+
+
+        $contacts->update($input);
+
+        toastr()->success('تم التعديل بنجاح!');
+
+        return back();
     }
 }

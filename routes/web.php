@@ -20,9 +20,6 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
 {
 
    Route::get('/', [SiteController::class,'index'])->name('index');
-   Route::get('/games', [SiteController::class,'games'])->name('games');
-   Route::get('/details/{id}', [SiteController::class,'details'])->name('games.details');
-   Route::get('/about', [SiteController::class,'about'])->name('about');
 
 });
 

@@ -1,176 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    <meta charset="UTF-8">
-    <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="Description" content="Bootstrap Responsive Admin Web Dashboard HTML5 Template">
-    <meta name="Author" content="Spruko Technologies Private Limited">
-    <meta name="Keywords"
-          content="admin,admin dashboard,admin dashboard template,admin panel template,admin template,admin theme,bootstrap 4 admin template,bootstrap 4 dashboard,bootstrap admin,bootstrap admin dashboard,bootstrap admin panel,bootstrap admin template,bootstrap admin theme,bootstrap dashboard,bootstrap form template,bootstrap panel,bootstrap ui kit,dashboard bootstrap 4,dashboard design,dashboard html,dashboard template,dashboard ui kit,envato templates,flat ui,html,html and css templates,html dashboard template,html5,jquery html,premium,premium quality,sidebar bootstrap 4,template admin bootstrap 4"/>
-
-    <!-- Title -->
-    <title> @yield('title') </title>
+    <meta name="keywords" content="HTML5 Template"/>
+    <meta name="description" content="Webmin - Bootstrap 4 & Angular 5 Admin Dashboard Template"/>
+    <meta name="author" content="potenzaglobalsolutions.com"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <title>@yield('title')</title>
 
     <!-- Favicon -->
-    <link rel="icon" href=" {{asset('assets/backend/img/brand/favicon.png')}} " type="image/x-icon"/>
+    <link rel="shortcut icon" href="{{asset('assets/backend/images/favicon.ico')}}"/>
 
-    <!-- Icons css -->
-    <link href="{{asset('assets/backend/css/icons.css')}}" rel="stylesheet">
+    <!-- Font -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Poppins:200,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900">
 
-    <!--  Owl-carousel css-->
-    <link href="{{asset('assets/backend/plugins/owl-carousel/owl.carousel.css')}}" rel="stylesheet"/>
+    <!-- css -->
 
-    <!--  Custom Scroll bar-->
-    <link href="{{asset('assets/backend/plugins/mscrollbar/jquery.mCustomScrollbar.css')}}" rel="stylesheet"/>
+    @if (App::getLocale() == 'ar')
+        <link rel="stylesheet" type="text/css" href="{{asset('assets/backend/css/rtl.css')}}"/>
+    @else
+        <link rel="stylesheet" type="text/css" href="{{asset('assets/backend/css/ltr.css')}}"/>
+    @endif
 
-    <!--  Sidebar css -->
-    <link href="{{asset('assets/backend/plugins/sidebar/sidebar.css')}}" rel="stylesheet">
-
-    <!-- Sidemenu css -->
-    <link rel="stylesheet" href="{{asset('assets/backend/'.getFolder().'/sidemenu.css')}}">
-
-    <!--- Internal Morris css-->
-    <link href="{{asset('assets/backend/plugins/morris.js/morris.css')}}" rel="stylesheet">
-
-    <!--- Style css --->
-    <link href="{{asset('assets/backend/'.getFolder().'/style.css')}}" rel="stylesheet">
-
-    <!--- Dark-mode css --->
-    <link href="{{asset('assets/backend/'.getFolder().'/style-dark.css')}}" rel="stylesheet">
-
-    <!---Skinmodes css-->
-    <link href="{{asset('assets/backend/'.getFolder().'/skin-modes.css')}}" rel="stylesheet"/>
-    <link href="{{asset('assets/backend/vendor/bootstrap-fileinput/css/fileinput.min.css')}}" rel="stylesheet"/>
-
+    <link rel="stylesheet"  href="{{asset('assets/backend/vendor/bootstrap-fileinput/css/fileinput.min.css')}}"/>
     <link rel="stylesheet"  href="{{asset('assets/backend/vendor/summernote/summernote-bs4.min.css')}}"/>
-
-
     @yield('style')
-
     @toastr_css
+
 </head>
 
-<body class="main-body app sidebar-mini">
+<body>
 
-<!-- Loader -->
-<div id="global-loader">
-    <img src="{{asset('assets/backend/img/loader.svg')}}" class="loader-img" alt="Loader">
-</div>
-<!-- /Loader -->
+<div class="wrapper">
 
-<!-- Page -->
-<div class="page">
+    <!--=================================
+     preloader -->
 
-    <!-- main-sidebar -->
-    <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
-
-@include('partials.main_sidebar')
-<!-- main-sidebar -->
-
-    <!-- main-content -->
-
-    <div class="main-content app-content">
-
-        <div class="container-fluid">
-
-            <!-- main-header opened -->
-        @include('partials.header')
-        <!-- /main-header -->
-            <!-- container opened -->
-            @yield('content')
-        </div>
+    <div id="pre-loader">
+        <img src="images/pre-loader/loader-01.svg" alt="">
     </div>
 
-
-    <!-- Container closed -->
-
-
+    <!--=================================
+     preloader -->
 
 
-    <!-- Footer opened -->
-@include('partials.footer')
-<!-- Footer closed -->
+    <!--=================================
+     header start-->
 
+     @include('partials.backend.header_navbar')
+    <!--=================================
+     header End-->
+
+    <!--=================================
+     Main content -->
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Left Sidebar start-->
+
+            @include('partials.backend.sidebar')
+
+            <!-- Left Sidebar End-->
+
+            <!--=================================
+           wrapper -->
+
+         @yield('content')
+
+
+
+            <!-- main content wrapper end-->
+        </div>
+    </div>
 </div>
-<!-- End Page -->
 
-<!-- Back-to-top -->
-<a href="#top" id="back-to-top"><i class="las la-angle-double-up"></i></a>
+<!--=================================
+ footer -->
 
 
-@jquery
-@toastr_js
-@toastr_render
+<!--=================================
+ jquery -->
 
-<!-- JQuery min js -->
-<script src="{{asset('assets/backend/plugins/jquery/jquery.min.js')}}"></script>
+<!-- jquery -->
+<script src="{{asset('assets/backend/js/jquery-3.3.1.min.js')}}"></script>
 
-<!-- Bootstrap Bundle js -->
-<script src="{{asset('assets/backend/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<!-- plugins-jquery -->
+<script src="{{asset('assets/backend/js/plugins-jquery.js')}}"></script>
 
-<!--Internal  Chart.bundle js -->
-<script src="{{asset('assets/backend/plugins/chart.js/Chart.bundle.min.js')}}"></script>
+<!-- plugin_path -->
+<script type="text/javascript">var plugin_path = '{{asset('assets/backend/js')}}/';</script>
 
-<!-- Ionicons js -->
-<script src="{{asset('assets/backend/plugins/ionicons/ionicons.js')}}"></script>
+<!-- chart -->
+<script src="{{asset('assets/backend/js/chart-init.js')}}"></script>
 
-<!-- Moment js -->
-<script src="{{asset('assets/backend/plugins/moment/moment.js')}}"></script>
+<!-- calendar -->
+<script src="{{asset('assets/backend/js/calendar.init.js')}}"></script>
 
-<!--Internal Sparkline js -->
-<script src="{{asset('assets/backend/plugins/jquery-sparkline/jquery.sparkline.min.js')}}"></script>
+<!-- charts sparkline -->
+<script src="{{asset('assets/backend/js/sparkline.init.js')}}"></script>
 
-<!-- Moment js -->
-<script src="{{asset('assets/backend/plugins/raphael/raphael.min.js')}}"></script>
+<!-- charts morris -->
+<script src="{{asset('assets/backend/js/morris.init.js')}}"></script>
 
-<!--Internal  Flot js-->
-<script src="{{asset('assets/backend/plugins/jquery.flot/jquery.flot.js')}}"></script>
-<script src="{{asset('assets/backend/plugins/jquery.flot/jquery.flot.pie.js')}}"></script>
-<script src="{{asset('assets/backend/plugins/jquery.flot/jquery.flot.resize.js')}}"></script>
-<script src="{{asset('assets/backend/plugins/jquery.flot/jquery.flot.categories.js')}}"></script>
-<script src="{{asset('assets/backend/js/dashboard.sampledata.js')}}"></script>
-<script src="{{asset('assets/backend/js/chart.flot.sampledata.js')}}"></script>
+<!-- datepicker -->
+<script src="{{asset('assets/backend/js/datepicker.js')}}"></script>
 
-<!-- Custom Scroll bar Js-->
-<script src="{{asset('assets/backend/plugins/mscrollbar/jquery.mCustomScrollbar.concat.min.js')}}"></script>
+<!-- sweetalert2 -->
+<script src="{{asset('assets/backend/js/sweetalert2.js')}}"></script>
 
-<!-- Rating js-->
-<script src="{{asset('assets/backend/plugins/rating/jquery.rating-stars.js')}}"></script>
-<script src="{{asset('assets/backend/plugins/rating/jquery.barrating.js')}}"></script>
+<!-- toastr -->
+<script src="{{asset('assets/backend/js/toastr.js')}}"></script>
 
-<!-- P-scroll js -->
-<script src="{{asset('assets/backend/plugins/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
-<script src="{{asset('assets/backend/plugins/perfect-scrollbar/p-scroll.js')}}"></script>
+<!-- validation -->
+<script src="{{asset('assets/backend/js/validation.js')}}"></script>
 
-<!-- Horizontalmenu js-->
-<script src="{{asset('assets/backend/plugins/sidebar/sidebar-rtl.js')}}"></script>
-<script src="{{asset('assets/backend/plugins/sidebar/sidebar-custom.js')}}"></script>
+<!-- lobilist -->
+<script src="{{asset('assets/backend/js/lobilist.js')}}"></script>
 
-<!-- Eva-icons js -->
-<script src="{{asset('assets/backend/js/eva-icons.min.js')}}"></script>
-
-<!-- Sticky js -->
-<script src="{{asset('assets/backend/js/sticky.js')}}"></script>
-<script src="{{asset('assets/backend/js/modal-popup.js')}}"></script>
-
-<!-- Left-menu js-->
-<script src="{{asset('assets/backend/plugins/side-menu/sidemenu.js')}}"></script>
-
-<!-- Internal Map -->
-<script src="{{asset('assets/backend/plugins/jqvmap/jquery.vmap.min.js')}}"></script>
-<script src="{{asset('assets/backend/plugins/jqvmap/maps/jquery.vmap.usa.js')}}"></script>
-
-<!--Internal  index js assets/-->
-<script src="{{asset('assets/backend/js/index.js')}}"></script>
-
-<!-- Apexchart js-->
-<script src="{{asset('assets/backend/js/apexcharts.js')}}"></script>
-
-<!-- custom js -->
+<!-- custom -->
 <script src="{{asset('assets/backend/js/custom.js')}}"></script>
-<script src="{{asset('assets/backend/js/jquery.vmap.sampledata.js')}}"></script>
 
 <script src="{{asset('assets/backend/vendor/bootstrap-fileinput/js/plugins/piexif.min.js')}}"></script>
 <script src="{{asset('assets/backend/vendor/bootstrap-fileinput/js/plugins/sortable.min.js')}}"></script>
@@ -181,5 +131,9 @@
 
 
 @yield('script')
+
+
+@toastr_js
+@toastr_render
 </body>
 </html>

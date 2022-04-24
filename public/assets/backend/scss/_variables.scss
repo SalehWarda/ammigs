@@ -1,65 +1,63 @@
-$background: #ecf0fa;
-$default-color:#031b4e;
+// NOTE: This file contains all the variables.
 
-/*Color variables*/
-$primary:#0162e8; 
-$secondary:#5f6d88;
-$pink:#f10075;
-$teal:#00cccc;
-$purple:#673ab7;
-$success:#22c03c;
-$warning:#fbbc0b;
-$danger:#ee335e;
-$info:#00b9ff;
-$orange:#fd7e14;
-$dark:#3b4863;
-$indigo:#ac50bb;
-$white:#fff;
-$black:#000;
+$body 	  		: #fafafa;
+$theme-color	: #84ba3f;
+$white			: #ffffff;
+$black			: #000000;
+$lightest-gray  : #f6f7f8;
+$light-gray		: #626262;
+$dark-gray		: #323232;
+$sidebar-dark	: #282a39;
+$border-color   : #eeeeee;
 
-/*gray variables*/
-$gray-100:#ecf0fa;
-$gray-200:#dde2ef;
-$gray-300:#d0d7e8;
-$gray-400:#b9c2d8;
-$gray-500:#949eb7;
-$gray-600:#737f9e;
-$gray-700:#4d5875;
-$gray-800:#364261;
-$gray-900:#242f48;
+$primary  		:#007bff; 
+$secondary 		:#6c757d; 
+$success  		:#28a745; 
+$danger  		:#dc3545; 
+$warning  		:#ffc107; 
+$info 	 		:#17a2b8; 
+$light  		:#f8f9fa; 
+$dark 	 		:#343a40; 
+$muted 	 		:#6c757d; 
 
-/*white variables*/
-$white-1:rgba(255, 255, 255, 0.1);
-$white-2:rgba(255, 255, 255, 0.2);
-$white-3:rgba(255, 255, 255, 0.3);
-$white-4 :rgba(255, 255, 255, 0.4);
-$white-5 :rgba(255, 255, 255, 0.5);
-$white-6 :rgba(255, 255, 255, 0.6);
-$white-7 :rgba(255, 255, 255, 0.7);
-$white-8 :rgba(255, 255, 255, 0.8);
-$white-9 :rgba(255, 255, 255, 0.9);
-$white-05:rgba(255, 255, 255, 0.05);
-$white-08:rgba(255, 255, 255, 0.08);
-$white-75:rgba(255, 255, 255, 0.075);
+$font-xs		: 0.760rem; 
+$font-s 		: 0.800rem; 
+$font-base		: 1rem;	 
+$font-md 		: 1.143rem; 	
+$font-lg 		: 1.286rem; 
+$font-xl		: 1.571rem;  
+$font-xxl		: 1.714rem; 	
+$font-xxxl		: 1.858rem; 
 
-/*black variables*/
-$black-1:rgba(0, 0, 0, 0.1);
-$black-2:rgba(0, 0, 0, 0.2);
-$black-3:rgba(0, 0, 0, 0.3);
-$black-4:rgba(0, 0, 0, 0.4);
-$black-5:rgba(0, 0, 0, 0.5);
-$black-6:rgba(0, 0, 0, 0.6);
-$black-7:rgba(0, 0, 0, 0.7);
-$black-8:rgba(0, 0, 0, 0.8);
-$black-9:rgba(0, 0, 0, 0.9);
-$black-05:rgba(0, 0, 0, 0.05);
+$line-xs		: 1rem;  			
+$line-s			: 1.143rem;
+$line-base		: 1.286rem;
+$line-md        : 1.571rem;
+$line-lg   		: 1.714rem;
+$line-xl		: 1.857rem;
+$line-xxl		: 2rem;
+$line-xxxl		: 2.14rem;
 
-/*shadow variables*/
-$shadow: -8px 12px 18px 0 #dadee8;
+$font-bold		: 700;
+$font-semibold	: 600;
+$font-medium 	: 500;
+$font-regular	: 400;
+$font-light		: 300;
 
-$dark-theme:#1f2940;
+$text-left		: left;
+$text-center	: center;
+$text-right		: right;
 
-$border:#e3e8f7;
-
-	
-
+$facebook 		: #3b5998;
+$twitter		: #00aced;
+$linkedin		: #0077B5;
+$dribbble		: #c73b65;
+$googleplus		: #d34836;
+$instagram		: #e2306a;
+$pinterest		: #c92228;
+$dropbox		: #3d9ae8;
+$flickr			: #0063DC;
+$tumblr			: #34526f;
+$skype			: #12a5f4;
+$youtube		: #c4302b;
+$github			: #323232; 

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\CategoriesController;
 use App\Http\Controllers\Backend\CoverController;
 use App\Http\Controllers\Backend\DashboardController;
@@ -93,6 +94,15 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
 
         });
 
+
+       Route::group(['prefix' => 'services'],function (){
+
+
+            Route::get('/',[DashboardController::class, 'services'])->name('admin.services');
+            Route::patch('/update',[DashboardController::class, 'updateServices'])->name('admin.services.update');
+
+        });
+
        Route::group(['prefix' => 'contacts'],function (){
 
 
@@ -116,6 +126,24 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
             Route::get('/account',[SettingController::class,'account'])->name('admin.account');
 
             Route::patch('/update-account',[SettingController::class,'updateAccount'])->name('admin.account_settings.update');
+
+        });
+
+
+        Route::group(['prefix'=>'users'],function (){
+
+            Route::get('/',[AdminController::class,'index'])->name('admin.users');
+            Route::get('/create',[AdminController::class,'create'])->name('admin.users.create');
+            Route::post('/store',[AdminController::class,'store'])->name('admin.users.store');
+            Route::get('/edit/{id}',[AdminController::class,'edit'])->name('admin.users.edit');
+
+            Route::post('/update',[AdminController::class,'update'])->name('admin.users.update');
+            Route::delete('/delete',[AdminController::class,'destroy'])->name('admin.users.delete');
+
+
+
+
+
 
         });
 

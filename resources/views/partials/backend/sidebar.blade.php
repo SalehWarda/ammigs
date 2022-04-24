@@ -68,6 +68,19 @@
             </li>
 
 
+             <li>
+                <a href="javascript:void(0);" data-toggle="collapse" data-target="#user-menu">
+                    <div class="pull-left"><i class="ti-user"></i><span
+                            class="right-nav-text">{{trans('dashboard.Users_Management')}}</span></div>
+                    <div class="pull-right"><i class="ti-plus"></i></div>
+                    <div class="clearfix"></div>
+                </a>
+                <ul id="user-menu" class="collapse" data-parent="#sidebarnav">
+                    <li><a href="{{route('admin.users')}}">{{trans('dashboard.Users_Management')}}</a></li>
+                </ul>
+            </li>
+
+
             <li>
                 <a href="javascript:void(0);" data-toggle="collapse" data-target="#settings-menu">
                     <div class="pull-left"><i class="ti-settings"></i><span
@@ -77,6 +90,18 @@
                 </a>
                 <ul id="settings-menu" class="collapse" data-parent="#sidebarnav">
                     <li><a href="{{route('admin.settings')}}">{{trans('dashboard.Settings')}}</a></li>
+                </ul>
+            </li>
+
+       <li>
+                <a href="javascript:void(0);" data-toggle="collapse" data-target="#service-menu">
+                    <div class="pull-left"><i class="ti-files"></i><span
+                            class="right-nav-text">{{trans('dashboard.Terms_of_service')}}</span></div>
+                    <div class="pull-right"><i class="ti-plus"></i></div>
+                    <div class="clearfix"></div>
+                </a>
+                <ul id="service-menu" class="collapse" data-parent="#sidebarnav">
+                    <li><a href="{{route('admin.services')}}">{{trans('dashboard.Terms_of_service')}}</a></li>
                 </ul>
             </li>
 

@@ -63,6 +63,23 @@ return [
     'Deleted_Successfully' => 'Deleted Successfully',
 
 
+    'Terms_of_service' => 'Terms of service',
+    'Service_ar' => 'Terms of service in Arabic',
+    'Service_en' => 'Terms of service in English',
+    'Users_Management' => 'Users Management',
+    'Users' => 'Users',
+    'AddUsers' => 'Add new User',
+    'EditUsers' => 'Edit User',
+    'ImageUser' => 'Image',
+    'Mobile' => 'Mobile',
+    'Privacy_Policy' => 'Privacy Policy and Terms of Service',
+    'Privacy' => 'Here you can read our Terms of Service and Privacy Policy!',
+
+
+
+
+
+
 
 
 

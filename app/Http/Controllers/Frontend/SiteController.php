@@ -9,6 +9,7 @@ use App\Models\Contact;
 use App\Models\Cover;
 use App\Models\Game;
 use App\Models\Product;
+use App\Models\Service;
 use App\Models\Setting;
 use App\Models\Slider;
 use Illuminate\Http\Request;
@@ -23,6 +24,7 @@ class SiteController extends Controller
         $data['about'] = About::first();
         $data['products'] = Product::all();
         $data['contacts'] = Contact::first();
+        $data['service'] = Service::first();
         $data['setting'] = $collection->flatMap(function($collection){
             return [$collection->key => $collection->value];
         });

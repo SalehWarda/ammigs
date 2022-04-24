@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\about;
 use App\Models\Contact;
+use App\Models\service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
@@ -25,33 +26,21 @@ class DashboardController extends Controller
         return view('pages.backend.about',compact('about'));
     }
 
-    public function updateAbout(Request $request)
+   public function services()
     {
-        $about = about::findOrFail($request->id);
-        $input['about']  =['ar'=>$request->about_ar, 'en'=>$request->about_en];
+        $service = Service::first();
+        return view('pages.backend.services',compact('service'));
+    }
+
+    public function updateServices(Request $request)
+    {
+        $service = Service::findOrFail($request->id);
+        $input['service']  =['ar'=>$request->service_ar, 'en'=>$request->service_en];
 
 
 
-        if ($image = $request->file('image')) {
 
-            if ($about->image != null && File::exists('/assets/images/about/' . $about->image)) {
-
-                unlink('/assets/images/about/' . $about->image);
-            }
-
-
-            $file_name = "about". "." . $image->getClientOriginalExtension();
-            $path = public_path('/assets/images/about/' . $file_name);
-
-            Image::make($image->getRealPath())->resize(500, null, function ($constraint) {
-
-                $constraint->aspectRatio();
-            })->save($path, 100);
-
-            $input['image'] = $file_name;
-
-        }
-        $about->update($input);
+        $service->update($input);
 
         toastr()->success(trans('dashboard.Updated_Successfully'));
 

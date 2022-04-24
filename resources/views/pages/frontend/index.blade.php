@@ -77,7 +77,7 @@
           <li><a class="nav-link scrollto" href="#about">{{trans('site.AboutUs')}}</a></li>
           <li><a class="nav-link scrollto" href="#hero1">{{trans('site.Products')}}</a></li>
           <li><a class="nav-link scrollto" href="#contact">{{trans('site.ContactUs')}}</a></li>
-          <li><a class="getstarted scrollto" href="{{route('getLogin')}}">{{trans('site.Login')}}</a></li>
+{{--          <li><a class="getstarted scrollto" href="{{route('getLogin')}}">{{trans('site.Login')}}</a></li>--}}
 
 
         </ul>
@@ -203,6 +203,35 @@
     </div>
   </section><!-- End Hero -->
 
+
+
+      <section id="faq" class="faq section-bg">
+          <div class="container">
+
+              <div class="section-title">
+                  <h2>{{trans('dashboard.Privacy_Policy')}}</h2>
+              </div>
+
+              <div class="faq-list">
+                  <ul>
+
+                      <li data-aos="fade-up" data-aos-delay="100">
+                          <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">{{trans('dashboard.Privacy')}} <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                          <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
+                              <br>
+                              <h6>
+                                  {{$service->service}}
+                              </h6>
+                          </div>
+                      </li>
+
+
+                  </ul>
+              </div>
+
+          </div>
+      </section>
+
     <section id="contact" class="contact">
       <div class="container">
 
@@ -264,11 +293,12 @@
           </div>
 
           <div class="col-lg-6 col-md-6 footer-links">
+            <h4>Useful Links</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#hero">{{trans('site.Home')}}</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#about">{{trans('site.AboutUs')}}</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#hero1">{{trans('site.Products')}}</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#contact">{{trans('site.ContactUs')}}</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#contact">{{trans('site.Email')}}</a></li>
 
             </ul>
           </div>
@@ -283,13 +313,14 @@
 
     <div class="container">
       <div class="copyright">
-        &copy;  <strong><span>{{$setting['company_name']}}</span></strong>. {{trans('site.All_Rights_Reserved')}}
+        &copy; Copyright <strong><span>{{$setting['company_name']}}</span></strong>. {{trans('site.All_Rights_Reserved')}}
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/groovin-free-bootstrap-theme/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
       </div>
     </div>
   </footer><!-- End Footer -->

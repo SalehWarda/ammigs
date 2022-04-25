@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\about;
 use App\Models\Contact;
 use App\Models\service;
+use App\Models\Social;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
@@ -36,6 +37,7 @@ class DashboardController extends Controller
     {
         $service = Service::findOrFail($request->id);
         $input['service']  =['ar'=>$request->service_ar, 'en'=>$request->service_en];
+        $input['service2']  =['ar'=>$request->service2_ar, 'en'=>$request->service2_en];
 
 
 
@@ -88,4 +90,42 @@ class DashboardController extends Controller
 
         return back();
     }
+
+    public function socials()
+    {
+
+        $socials = Social::paginate(5);
+        return view('pages.backend.socials.index',compact('socials'));
+
+    }
+
+        public function socialsStore(Request $request)
+    {
+
+        $input['site']  = $request->site;
+        $input['link']  =$request->link;
+
+
+        Social::create($input);
+
+        toastr()->success(trans('dashboard.Created_Successfully'));
+
+        return back();
+
+
+    }
+
+         public function socialsDelete(Request $request)
+    {
+
+        $socials = Social::findOrFail($request->delete_social);
+
+        $socials->delete();
+        toastr()->error(trans('dashboard.Deleted_Successfully'));
+
+        return back();
+
+
+    }
+
 }

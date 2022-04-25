@@ -105,6 +105,18 @@
                 </ul>
             </li>
 
+              <li>
+                <a href="javascript:void(0);" data-toggle="collapse" data-target="#socials-menu">
+                    <div class="pull-left"><i class="ti-link"></i><span
+                            class="right-nav-text">{{trans('dashboard.Socials')}}</span></div>
+                    <div class="pull-right"><i class="ti-plus"></i></div>
+                    <div class="clearfix"></div>
+                </a>
+                <ul id="socials-menu" class="collapse" data-parent="#sidebarnav">
+                    <li><a href="{{route('admin.socials')}}">{{trans('dashboard.Socials')}}</a></li>
+                </ul>
+            </li>
+
 
         </ul>
     </div>

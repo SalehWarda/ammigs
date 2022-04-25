@@ -142,6 +142,15 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
 
 
 
+        });
+
+
+        Route::group(['prefix'=>'socials'],function (){
+
+            Route::get('/',[DashboardController::class,'socials'])->name('admin.socials');
+            Route::get('/create',[DashboardController::class,'socialsCreate'])->name('admin.socials.create');
+            Route::post('/store',[DashboardController::class,'socialsStore'])->name('admin.socials.store');
+            Route::delete('/delete',[DashboardController::class,'socialsDelete'])->name('admin.socials.delete');
 
 
 

@@ -52,7 +52,7 @@
             <button type="button" class="btn btn-dark btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 @if (App::getLocale() == 'ar')
                     {{ LaravelLocalization::getCurrentLocaleName() }}
-                    <img src="{{ URL::asset('assets/images/flags/EG.png') }}" alt="">
+                    <img src="{{ URL::asset('assets/images/flags/SA.png') }}" alt="">
                 @else
                     {{ LaravelLocalization::getCurrentLocaleName() }}
                     <img src="{{ URL::asset('assets/images/flags/US.png') }}" alt="">
@@ -76,6 +76,8 @@
           <li><a class="nav-link scrollto active" href="#hero">{{trans('site.Home')}}</a></li>
           <li><a class="nav-link scrollto" href="#about">{{trans('site.AboutUs')}}</a></li>
           <li><a class="nav-link scrollto" href="#hero1">{{trans('site.Products')}}</a></li>
+          <li><a class="nav-link scrollto" href="#faq">{{trans('site.Privacy1')}}</a></li>
+          <li><a class="nav-link scrollto" href="#faq">{{trans('site.Terms')}}</a></li>
           <li><a class="nav-link scrollto" href="#contact">{{trans('site.ContactUs')}}</a></li>
 {{--          <li><a class="getstarted scrollto" href="{{route('getLogin')}}">{{trans('site.Login')}}</a></li>--}}
 
@@ -209,15 +211,25 @@
           <div class="container">
 
               <div class="section-title">
-                  <h2>{{trans('dashboard.Privacy_Policy')}}</h2>
+                  <h2>{{trans('dashboard.Privacy_Terms')}}</h2>
               </div>
 
               <div class="faq-list">
                   <ul>
 
                       <li data-aos="fade-up" data-aos-delay="100">
-                          <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">{{trans('dashboard.Privacy')}} <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                          <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">{{trans('dashboard.Privacy_Policy')}} <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                           <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
+                              <br>
+                              <h6>
+                                  {{$service->service}}
+                              </h6>
+                          </div>
+                      </li>
+
+                       <li data-aos="fade-up" data-aos-delay="200">
+                          <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">{{trans('dashboard.Terms_of_Service')}}<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                          <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
                               <br>
                               <h6>
                                   {{$service->service}}
@@ -250,13 +262,21 @@
             </div>
           </div>
 
-          <div class="col-md-4">
-            <div class="contact-phone">
-              <i class="bi bi-phone"></i>
-              <h3>{{trans('site.phoneNumber')}}</h3>
-              <p><a href="tel:{{$contacts->phone}}">{{$contacts->phone}}</a></p>
+            <div class=" col-md-4 social-links ">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
             </div>
-          </div>
+
+{{--          <div class="col-md-4">--}}
+{{--            <div class="contact-phone">--}}
+{{--              <i class="bi bi-phone"></i>--}}
+{{--              <h3>{{trans('site.phoneNumber')}}</h3>--}}
+{{--              <p><a href="tel:{{$contacts->phone}}">{{$contacts->phone}}</a></p>--}}
+{{--            </div>--}}
+{{--          </div>--}}
 
           <div class="col-md-4">
             <div class="contact-email">
@@ -320,7 +340,6 @@
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/groovin-free-bootstrap-theme/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
       </div>
     </div>
   </footer><!-- End Footer -->

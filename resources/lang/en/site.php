@@ -49,6 +49,8 @@ return [
     'Email' => 'Email',
     'Login' => 'Login',
     'Start' => 'Let`s Go',
+    'Privacy1' => 'Privacy',
+    'Terms' => 'Terms',
 
 
 

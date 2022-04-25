@@ -72,8 +72,21 @@ return [
     'EditUsers' => 'Edit User',
     'ImageUser' => 'Image',
     'Mobile' => 'Mobile',
-    'Privacy_Policy' => 'Privacy Policy and Terms of Service',
+    'Privacy_Terms' => 'Privacy Policy and Terms of Service',
     'Privacy' => 'Here you can read our Terms of Service and Privacy Policy!',
+    'Terms_of_Service' => ' Terms of Service',
+    'Privacy_Policy' => 'Privacy Policy',
+
+    'Socials' => 'Social Media',
+    'AddUSocials' => 'Add Social',
+    'SiteSocial' => 'Site Name',
+    'LinkSite' => 'Site Link',
+    'Close' => 'Close',
+    'Are_you_sure_about_deleting' => 'Are you sure about deleting',
+
+
+
+
 
 
 

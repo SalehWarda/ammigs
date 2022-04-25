@@ -73,6 +73,32 @@
                                                 </div>
                                             </div>
 
+                                            <div class="row">
+
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="service2_ar"> {{trans('dashboard.Service2_ar')}} :</label>
+
+                                                        <textarea name="service2_ar" rows="3" class="form-control summernote">{!! old('service2_ar',$service->getTranslation('service2','ar'))  !!}</textarea>
+
+                                                        @error('service2_ar')
+                                                        <span class="text-danger">{{ $message }}</span>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="service2_en"> {{trans('dashboard.Service2_en')}} :</label>
+
+                                                        <textarea name="service2_en" rows="3" class="form-control summernote">{!! old('service2_en',$service->getTranslation('service2','en')) !!}</textarea>
+
+                                                        @error('service2_en')
+                                                        <span class="text-danger">{{ $message }}</span>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+                                            </div>
+
 
                                             <br>
                                             <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" type="submit">{{trans('dashboard.Save')}}</button>

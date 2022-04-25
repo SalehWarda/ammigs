@@ -17,9 +17,11 @@ class ServiceSeeder extends Seeder
         //
         Service::create([
 
-            'service' => ['ar' => 'سياسة الخصوصية والاستخدام هنا',
-                'en'=> 'Privacy and usage policy here
-'],
+            'service' => ['ar' => 'سياسة الخصوصية هنا',
+                'en'=> 'Privacy here'],
+
+            'service2' => ['ar' => 'شروط الخدمة هنا',
+                'en'=> 'Usage policy here'],
 
             ]);
     }

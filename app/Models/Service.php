@@ -11,7 +11,7 @@ class Service extends Model
     use HasFactory;
     use HasTranslations;
 
-    public $translatable = ['service'];
+    public $translatable = ['service','service2'];
 
     protected $guarded=[];
 
